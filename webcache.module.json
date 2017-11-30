@@ -1,0 +1,7 @@
+{
+	"name": "Web Cache",
+	"module_class": "zesk\\WebCache\\Module",
+	"autoload_options": {
+		"class_prefix": "zesk\\WebCache\\"
+	}
+}
