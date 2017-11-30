@@ -1,7 +1,35 @@
 {
-	"name": "Web Cache",
-	"module_class": "zesk\\WebCache\\Module",
-	"autoload_options": {
-		"class_prefix": "zesk\\WebCache\\"
-	}
+	"name": "zesk/module-webcache",
+	"description": "WebCache Module for Zesk",
+	"require": {
+		"zesk/zesk": ">0.10"
+	},
+	"require-dev": {
+		"phpunit/phpunit": "*",
+		"phpunit/php-invoker": "*"
+	},
+	"authors": [
+		{
+			"name": "Kent Davidson",
+			"email": "getsupport@marketacumen.com"
+		}
+	],
+	"keywords": [
+		"zesk",
+		"application",
+		"framework",
+		"module",
+		"webcache",
+		"url",
+		"ttl",
+		"time to live"
+	],
+	"autoload": {
+		"psr-4": {
+			"zesk\\WebCache\\": "classes/"
+		}
+	},
+	"type": "library",
+	"license": "MIT",
+	"homepage": "https://github.com/zesk/module-webcache"
 }

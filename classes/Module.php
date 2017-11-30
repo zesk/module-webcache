@@ -25,13 +25,35 @@ class Module extends \zesk\Module {
 	
 	/**
 	 * 
+	 * {@inheritDoc}
+	 * @see \zesk\Module::initialize()
+	 */
+	public function initialize() {
+		$this->options['name'] = "Web Cache";
+		$this->codename = __CLASS__;
+		$this->path = dirname(__DIR__);
+// 		$this->application->register_class(array(
+// 			Info::class,
+// 			Instance::class,
+// 			Iterator::class,
+// 			Local\Info::class,
+// 			Local\Instance::class,
+// 			Local\Iterator::class
+// 		));
+	}
+	/**
+	 * 
 	 * @param array $options
 	 * @return Instance
 	 */
 	public function factory(array $options = array()) {
-		$class = avalue($options, "class", Local::class);
+		$class = avalue($options, "class", Local\Instance::class);
 		return $this->application->factory($class, $this->application, $options);
 	}
+	
+	/**
+	 * 
+	 */
 	public function hook_configured() {
 		$result = $this->application->configuration->deprecated("File_Cache::ttl", __CLASS__ . "::defaults::ttl");
 		$result = $this->application->configuration->deprecated("File_Cache::path", __CLASS__ . "::instances::default::path") || $result;
